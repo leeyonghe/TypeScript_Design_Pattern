@@ -1,5 +1,7 @@
 import AddOperation from "./AddOperation";
+import CalcClient from "./CalcClient";
 import Calculator from "./Calculator";
+import DisplayClient from "./DisplayClient";
 import MultiflyOPeration from "./MultiflyOPeration";
 import SubstractOperation from "./SubstractOperation";
 
@@ -13,30 +15,20 @@ class Client {
         
         let calculator = new Calculator();
 
-        let addOper = new AddOperation();
-        let subOper = new SubstractOperation();
-        let muliOper = new MultiflyOPeration();
-
-        calculator.setAddOperation(addOper);
-        calculator.setSubsOperation(subOper);
-        calculator.setMultiOperation(muliOper);
-
         let firstNumber = 100;
         let secondNumber = 90;
         let operator = "+";
 
-        let result : number = calculator.add(firstNumber, secondNumber);
-        console.log(firstNumber+" "+operator+" "+secondNumber+" : "+result);
+        let operation = new AddOperation()
 
-        operator = "-";
+        let calClient = new CalcClient();
 
-        result = calculator.substract(firstNumber, secondNumber);
-        console.log(firstNumber+" "+operator+" "+secondNumber+" : "+result);
+        let answer = calClient.request(calculator, operation, firstNumber, secondNumber);
 
-        operator = "*";
+        let displayClient = new DisplayClient();
 
-        result = calculator.multifly(firstNumber, secondNumber);
-        console.log(firstNumber+" "+operator+" "+secondNumber+" : "+result);
+        displayClient.request(calculator, operation, firstNumber, secondNumber);
+
 
     }
 

@@ -6,6 +6,10 @@ abstract class AbstractOperation {
 
     abstract operate(firstNumber : number, secondNumber : number) : number;
 
+    abstract getOperation(): string;
+
+    abstract toString() : string;
+
 }
 
 export default AbstractOperation;

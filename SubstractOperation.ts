@@ -14,6 +14,10 @@ class SubstractOperation extends AbstractOperation{
         return "SubstractOperation";
     }
 
+    getOperation(): string {
+        return "-";
+    }
+
 }
 
 export default SubstractOperation;

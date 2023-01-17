@@ -14,6 +14,10 @@ class AddOperation extends AbstractOperation{
         return "AddOperation";
     }
 
+    getOperation(): string {
+        return "+";
+    }
+
 }
 
 export default AddOperation;

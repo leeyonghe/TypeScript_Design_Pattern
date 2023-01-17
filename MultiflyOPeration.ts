@@ -14,6 +14,10 @@ class MultiflyOPeration extends AbstractOperation{
         return "MultiflyOPeration";
     }
 
+    getOperation(): string {
+        return "*";
+    }
+
 }
 
 export default MultiflyOPeration;

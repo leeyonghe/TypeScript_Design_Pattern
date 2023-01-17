@@ -1,65 +1,42 @@
+import AbstractOperation from "./AbstractOperation";
 import AddOperation from "./AddOperation";
 import MultiflyOPeration from "./MultiflyOPeration";
 import SubstractOperation from "./SubstractOperation";
 
-class Calculator {
+export interface IDisplay{
+    display() : void;
+}
 
-    private addOper : AddOperation;
-    private subOper : SubstractOperation;
-    private muliOper : MultiflyOPeration;
+class Calculator implements IDisplay{
+
+    private operation : AbstractOperation;
+    private firstNumber : number;
+    private secondNumber : number;
+    private result : number;
+    private operator : string;
 
     constructor(){
-
+       
     }
 
-    // calculate(operator : string, firstNumber : number, secondNumber) : number{
-    //     let answer = 0;
-    //     switch(operator){
-    //         case "+":{
-    //             answer = firstNumber + secondNumber;
-    //         }break;
-    //         case "-":{
-    //             answer = firstNumber - secondNumber;
-    //         }break;
-    //         case "*":{
-    //             answer = firstNumber * secondNumber;
-    //         }break;
-    //         case "/":{
-    //             answer = firstNumber / secondNumber;
-    //         }break;
-    //     }
-    //     return answer;
-    // }
-
-    add(firstNumber : number, secondNumber) : number{
-        let answer : number = this.addOper.operate(firstNumber, secondNumber);
-        return answer;
+    setOperation(operation : AbstractOperation){
+        this.operation = operation;
     }
 
-    substract(firstNumber : number, secondNumber) : number{
-        let answer  = this.subOper.operate(firstNumber, secondNumber);
-        return answer;
+    calculate(firstNumber : number, secondNumber : number) : number{
+        this.firstNumber = firstNumber;
+        this.secondNumber = secondNumber;
+        this.result = this.operation.operate(firstNumber, secondNumber);
+        this.operator = this.operation.getOperation();
+        return this.result;
     }
 
-    multifly(firstNumber : number, secondNumber) : number{
-        let answer = this.muliOper.operate(firstNumber, secondNumber);
-        return answer;
+    display() : void{
+        console.log(this.firstNumber + this.operator + this.secondNumber + " = " + this.result);
     }
 
     toString() : string{
         return "Calculator";
-    }
-
-    setAddOperation(addOper : AddOperation){
-        this.addOper = addOper;
-    }
-
-    setSubsOperation(subOper : SubstractOperation){
-        this.subOper = subOper;
-    }
-
-    setMultiOperation(muliOper : MultiflyOPeration){
-        this.muliOper = muliOper;
     }
 
 }
