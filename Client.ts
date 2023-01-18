@@ -16,18 +16,32 @@ class Client {
         let calculator = new Calculator();
 
         let firstNumber = 100;
+
         let secondNumber = 90;
+
         let operator = "+";
 
-        let operation = new AddOperation()
+        let addOpr = new AddOperation()
+
+        let mulOpr = new MultiflyOPeration();
+
+        let subOpr = new SubstractOperation();
 
         let calClient = new CalcClient();
 
-        let answer = calClient.request(calculator, operation, firstNumber, secondNumber);
-
         let displayClient = new DisplayClient();
 
-        displayClient.request(calculator, operation, firstNumber, secondNumber);
+        let answer = calClient.request(calculator, addOpr, firstNumber, secondNumber);
+
+        displayClient.request(calculator, addOpr, firstNumber, secondNumber);
+
+        answer = calClient.request(calculator, subOpr, firstNumber, secondNumber);
+
+        displayClient.request(calculator, subOpr, firstNumber, secondNumber);
+
+        answer = calClient.request(calculator, mulOpr, firstNumber, secondNumber);
+
+        displayClient.request(calculator, mulOpr, firstNumber, secondNumber);
 
 
     }
