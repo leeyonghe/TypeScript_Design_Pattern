@@ -11,6 +11,7 @@ abstract class AbstractOperationBuilder{
     }
 
     abstract opertate() : number;
+    abstract buildOperator() : void;
 
     toString() : string{
         return "AbstractOperationBuilder : "+this.firstNumber+" "+this.secondNumber;
@@ -31,10 +32,6 @@ abstract class AbstractOperationBuilder{
     buildAnswer(){
         let answer = this.opertate();
         this.result += " = "+answer;
-    }
-
-    buildOperator(){
-        
     }
 
 }
