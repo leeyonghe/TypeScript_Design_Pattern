@@ -13,7 +13,6 @@ class OperationDirector {
         this.builder.buildOperator();
         this.builder.buildSecondNumber();
         this.builder.buildAnswer();
-
         let result = this.builder.getResult();
         console.log(result);
     }

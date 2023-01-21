@@ -9,11 +9,11 @@ console.log("###################### "+new Date().toLocaleTimeString("ko-KR"));
 let firstNumber = 100;
 let secondNumber = 90;
 
-let operationBuilder = [];
+let operationBuilder = new Array();
 
-operationBuilder[0] = new AddOperationBuilder(firstNumber, secondNumber);
-operationBuilder[1] = new SubstractAddOperationBuilder(firstNumber, secondNumber);
-operationBuilder[2] = new MultiflyOperationBuilder(firstNumber, secondNumber);
+operationBuilder.push(new AddOperationBuilder(firstNumber, secondNumber));
+operationBuilder.push(new SubstractAddOperationBuilder(firstNumber, secondNumber));
+operationBuilder.push(new MultiflyOperationBuilder(firstNumber, secondNumber));
 
 for (const builder of operationBuilder) {
 
