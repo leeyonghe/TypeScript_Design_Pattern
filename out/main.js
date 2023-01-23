@@ -1,20 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var AddOperationBuilder_1 = require("./AddOperationBuilder");
-var MultiflyOperationBuilder_1 = require("./MultiflyOperationBuilder");
-var OperationDirector_1 = require("./OperationDirector");
-var SubstractAddOperationBuilder_1 = require("./SubstractAddOperationBuilder");
+var AddOperation_1 = require("./AddOperation");
+var MultiflyOperation_1 = require("./MultiflyOperation");
+var SubstractOperation_1 = require("./SubstractOperation");
 console.log("###################### " + new Date().toLocaleTimeString("ko-KR"));
 var firstNumber = 100;
 var secondNumber = 90;
-var operationBuilder = new Array();
-operationBuilder.push(new AddOperationBuilder_1.default(firstNumber, secondNumber));
-operationBuilder.push(new SubstractAddOperationBuilder_1.default(firstNumber, secondNumber));
-operationBuilder.push(new MultiflyOperationBuilder_1.default(firstNumber, secondNumber));
-for (var _i = 0, operationBuilder_1 = operationBuilder; _i < operationBuilder_1.length; _i++) {
-    var builder = operationBuilder_1[_i];
-    var operationDirector = new OperationDirector_1.default(builder);
-    operationDirector.construct();
+var operations = [new AddOperation_1.default(), new SubstractOperation_1.default(), new MultiflyOperation_1.default()];
+for (var _i = 0, operations_1 = operations; _i < operations_1.length; _i++) {
+    var operation = operations_1[_i];
+    operation.firstNumber = firstNumber;
+    operation.secondNumber = secondNumber;
+    operation.operator();
 }
 console.log("###################### " + new Date().toLocaleTimeString("ko-KR"));
 //# sourceMappingURL=main.js.map
