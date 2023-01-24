@@ -1,1 +1,1 @@
-# TypeScript
+# TypeScript Design Pattern
