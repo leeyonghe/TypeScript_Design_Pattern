@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Client_1 = require("./Client");
+var IntergerOperationFactory_1 = require("./IntergerOperationFactory");
 console.log("###################### " + new Date().toLocaleTimeString("ko-KR"));
-var client = new Client_1.default();
-var firstNumber = 100;
-var secondNumber = 90;
-var opertors = ["+", "-", "*"];
-for (var _i = 0, opertors_1 = opertors; _i < opertors_1.length; _i++) {
-    var key = opertors_1[_i];
-    client.setOperation(key, firstNumber, secondNumber);
-    client.operate();
-}
+var firstNumer = "10.2";
+var secondNumber = "20.3";
+var operationFactory = new IntergerOperationFactory_1.default();
+var operationProduct = operationFactory.createOperationProduct();
+var firstNumberOperandProduct = operationFactory.createNumberOperandProduct(firstNumer);
+var secondNumberOperandProduct = operationFactory.createNumberOperandProduct(secondNumber);
+operationProduct.firstNumberOperandProduct = firstNumberOperandProduct;
+operationProduct.secondNumberOperandProduct = secondNumberOperandProduct;
+operationProduct.print();
 console.log("###################### " + new Date().toLocaleTimeString("ko-KR"));
 //# sourceMappingURL=main.js.map
