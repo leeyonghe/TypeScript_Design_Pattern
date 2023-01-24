@@ -7,15 +7,15 @@ abstract class AbstractOperationProduct{
 
     abstract print() : void;
 
-    add():number{
+    protected add():number{
         return this.getFirstNumber()+this.getSecondNumber();
     }
 
-    multify():number{
+    protected multify():number{
         return this.getFirstNumber()*this.getSecondNumber();
     }
 
-    substract():number{
+    protected substract():number{
         return this.getFirstNumber()-this.getSecondNumber();
     }
 
