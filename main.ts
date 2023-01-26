@@ -13,9 +13,13 @@ let firstNumberEquation = new NumberExpression(firstNumber);
 
 calculator.setExpression(firstNumberEquation);
 
+console.log(calculator.calculate());
+
 let secondNumberEquation = new NumberExpression(secondNumber);
 
 calculator.setExpression(secondNumberEquation);
+
+console.log(calculator.calculate());
 
 let addOperationExpression = new AddOperationExpression();
 
