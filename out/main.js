@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var CalcuratorFacade_1 = require("./CalcuratorFacade");
+const Client_1 = require("./Client");
+const PrintAnswer_1 = require("./PrintAnswer");
 console.log("###################### " + new Date().toLocaleTimeString("ko-KR"));
-var calculateFacade = new CalcuratorFacade_1.default();
-var expression = ["100+90", "100-90", "100*90", "100/90"];
-for (var _i = 0, expression_1 = expression; _i < expression_1.length; _i++) {
-    var ex = expression_1[_i];
-    calculateFacade.calculate(ex);
-}
+let client = new Client_1.default();
+client.setupTextStyleFlyweightFactory();
+let printAswner = new PrintAnswer_1.default();
+printAswner.firstNumber = 100;
+printAswner.secondNumber = 90;
+printAswner.printResult();
 console.log("###################### " + new Date().toLocaleTimeString("ko-KR"));
 //# sourceMappingURL=main.js.map
