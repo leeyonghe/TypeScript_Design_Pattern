@@ -14,9 +14,7 @@ class NumberExpression extends AbstractExpression{
         return this.value;
     }
 
-    parse(context: CalcContext): void {
-        
-    }
+    parse(context: CalcContext): void {}
 
 }
 export default NumberExpression;
