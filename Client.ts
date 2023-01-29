@@ -50,6 +50,8 @@ class Client implements IContext{
     }
 
     _calculate(operator : string, value : number) : void{
+        console.log("calculate operator : "+operator);
+        console.log("calculate value : "+value);
         switch (operator) {
             case "+":
                 this.result += value;

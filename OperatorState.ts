@@ -21,7 +21,7 @@ class OperatorState implements IState{
     }
 
     action(context: IContext, actionCommand: string): void {
-        console.log("here is OperatorState");
+        console.log("here is OperatorState : "+actionCommand);
         if (context.isOperator(actionCommand)) {
             context.setLastOperator(actionCommand);
         }else{
